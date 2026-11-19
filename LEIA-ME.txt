@@ -1,0 +1,50 @@
+HMDF esportes - Sistema de Gestão de Atletas e Treinadores
+===========================================================
+
+COMO RODAR
+  1. Instale o Node.js (nodejs.org)
+  2. Abra o terminal NESTA pasta (a que tem o servidor.js)
+  3. npm install
+  4. node servidor.js
+  5. No navegador, digite:  http://localhost:3000
+     (não abra o index.html com dois cliques)
+
+DADOS DE TESTE
+  Aluno:      CPF 123.456.789-09     ID 1
+  Treinador:  jair@hmdfesports.com   senha 123456
+
+OS ARQUIVOS
+  banco.js       as tabelas (SQL). O id de todas é AUTOINCREMENT.
+                 (aluno.treinador_id guarda o treinador escolhido)
+  servidor.js    recebe os pedidos da tela, usa o banco e responde em JSON
+  seguranca.js   embaralha a senha do treinador
+  dados.json     cópia de tudo que está no banco (o servidor atualiza sozinho)
+  imagens/       as logos (Paraná, HMDF Sports, HMDF software e Colégio Cívico-Militar)
+  public/        index.html, style.css e script.js (a parte do navegador)
+
+PORTAL (aba "Portal")
+  Escolha em "Entrar como": Aluno ou Treinador.
+  Aluno:     digite o CPF (com ou sem pontos) ou o ID de matrícula. Mostra os dados
+             do aluno, o treinador dele e as modalidades em que está matriculado.
+             (Aluno com matrícula cancelada não aparece no Portal.)
+  Treinador: entre com e-mail e senha. Mostra os dados do treinador e a lista dos
+             alunos que escolheram ele.
+
+TREINADOR DO ALUNO
+  No cadastro do aluno há a caixa "Treinador do Aluno" (opcional).
+  Se um treinador for excluído, os alunos dele ficam "Sem treinador".
+
+MATRÍCULAS (STATUS)
+  A tabela da aba Matrículas mostra o status: "Matriculado" ou "Não matriculado".
+  O botão "cancelar" NÃO apaga o aluno: ele passa para "Não matriculado", some da
+  aba Aluno, do Portal e da lista do treinador, e continua só na tabela de
+  Matrículas. O botão "reativar" (nessa mesma linha) devolve o aluno a todas as telas.
+  (O botão "excluir" da aba Aluno continua apagando o aluno de verdade.)
+
+AS TABELAS
+  aluno, treinador, modalidade
+  alunomodalidade  (liga o aluno à modalidade)
+
+SE MEXER NO banco.js: apague o arquivo banco.db e rode de novo.
+(O banco.db antigo continua funcionando: a tabela prontuario é apagada sozinha
+ e as colunas treinador_id e matriculado são acrescentadas sozinhas na tabela aluno.)

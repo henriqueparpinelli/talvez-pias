@@ -1,0 +1,68 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Henrique da Motinha",
+      "cpf": "123.456.789-09",
+      "login": "henrique@gmail.com",
+      "cidade": "Foz do Iguaçu",
+      "telefone": "(45) 98888-0001",
+      "cep": "85851-000",
+      "treinador_id": 1,
+      "matriculado": 1
+    },
+    {
+      "id": 2,
+      "nome": "Luiz Arthur",
+      "cpf": "109.324.927-40",
+      "login": "luiz.aryhe1o@gmai.com",
+      "cidade": "Foz do Iguaçu",
+      "telefone": "(42) 99870-6723",
+      "cep": "85855-09",
+      "treinador_id": 1,
+      "matriculado": 0
+    }
+  ],
+  "treinadores": [
+    {
+      "id": 1,
+      "cdedf": "030000-G/PR",
+      "nome": "Jair",
+      "login": "jair@hmdfesports.com",
+      "especialidade": "Basquete",
+      "telefone": "(45) 99999-0001"
+    }
+  ],
+  "modalidades": [
+    {
+      "id": 1,
+      "esporte": "Basquete",
+      "turno": "noite",
+      "turma": "2A",
+      "agenda": "quarta-feira"
+    },
+    {
+      "id": 2,
+      "esporte": "futebol",
+      "turno": "noite",
+      "turma": "2b",
+      "agenda": "quarta-feira"
+    }
+  ],
+  "matriculas": [
+    {
+      "id": 1,
+      "aluno_id": 1,
+      "modalidade_id": 1,
+      "modalidade_turno": "noite",
+      "modalidade_esporte": "Basquete"
+    },
+    {
+      "id": 2,
+      "aluno_id": 2,
+      "modalidade_id": 2,
+      "modalidade_turno": "noite",
+      "modalidade_esporte": "futebol"
+    }
+  ]
+}
